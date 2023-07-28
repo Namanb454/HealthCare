@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-)v-s$a#n=54mcgnb83_q_2)7omca7rh&&hth1er#vx=_n413=x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['HealthCare', '127.0.0.1:8000', '*', '.vercel.app', '.now.sh']
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
 
 
 # Application definition
@@ -122,8 +122,12 @@ STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
-STATICFILES_DIRS = os.path.join(BASE_DIR, "static"),
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")
+],
+STATIC_ROOT = [
+    os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+] 
 MESSAGE_TAGS = {
     messages.ERROR: 'danger'
 }
